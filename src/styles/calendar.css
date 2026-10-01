@@ -85,8 +85,14 @@
   color: white;
 }
 .calendar-add span {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex: none;
   font-size: 24px;
   font-weight: 300;
+  line-height: 1;
 }
 .calendar-add:hover,
 .task-create:hover {
