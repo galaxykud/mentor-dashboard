@@ -85,14 +85,26 @@
   color: white;
 }
 .calendar-add span {
-  display: grid;
-  place-items: center;
+  position: relative;
+  display: block;
   width: 24px;
   height: 24px;
   flex: none;
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 1;
+  font-size: 0;
+}
+.calendar-add span::before,
+.calendar-add span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 1.5px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+}
+.calendar-add span::after {
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 .calendar-add:hover,
 .task-create:hover {
