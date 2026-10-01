@@ -379,7 +379,7 @@
   outline: none;
 }
 .task-comment:focus-within {
-  border-color: #ff7900;
+  border-color: #595959;
 }
 .calendar-shell {
   background: #121212 url("/assets/calendar-texture.png") center top/cover
