@@ -178,8 +178,8 @@
   background: #e8f0ff;
 }
 .calendar-event > strong {
-  font-family: inherit;
-  font-size: 16px;
+  font-family: Bounded, Arial, sans-serif;
+  font-size: 14px;
   font-weight: 500;
 }
 .calendar-event > p {
