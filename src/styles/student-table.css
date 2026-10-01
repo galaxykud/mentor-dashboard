@@ -11,6 +11,10 @@
   line-height: 1;
 }
 
+.table-head > span:nth-child(7) {
+  text-align: center;
+}
+
 .student {
   height: 68px;
   color: #242424;
