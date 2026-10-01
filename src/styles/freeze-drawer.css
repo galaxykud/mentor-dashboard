@@ -50,8 +50,10 @@
   font-weight: 500;
 }
 .freeze-intro p {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  font-weight: 400;
   font-size: 16px;
-  line-height: 19.2px;
+  line-height: 120%;
   color: #9b9994;
   margin-top: 16px;
 }
@@ -186,11 +188,13 @@
   color: #9b9994;
 }
 .freeze-comment span {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  font-weight: 400;
   position: absolute;
   right: 16px;
   bottom: 16px;
   font-size: 14px;
-  line-height: 14px;
+  line-height: 100%;
   color: #9b9994;
 }
 .freeze-footer {
