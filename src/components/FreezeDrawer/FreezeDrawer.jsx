@@ -149,7 +149,7 @@ export default function FreezeDrawer({ student, onClose, onCancel }) {
                 className="freeze-label comment-label"
                 htmlFor="freeze-comment"
               >
-                Коментарий
+                Комментарий
               </label>
               <div className="freeze-comment">
                 <textarea
