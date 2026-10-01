@@ -376,8 +376,10 @@
   flex: none;
 }
 .task-drawer textarea:focus-visible {
-  outline: 2px solid #ff7900;
-  outline-offset: 4px;
+  outline: none;
+}
+.task-comment:focus-within {
+  border-color: #ff7900;
 }
 .calendar-shell {
   background: #121212 url("/assets/calendar-texture.png") center top/cover
