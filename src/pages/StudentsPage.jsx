@@ -56,9 +56,9 @@ export default function StudentsPage({ open, onDetails, selectedStudent }) {
               {course || "Направление"}
               <img src={asset(course ? "31e17.svg" : "0cb45.svg")} alt="" />
             </button>
-            <label className="select-filter">
-              <span className="sr-only">Семестр</span>
+            <div className={"select-filter" + (semester ? " selected" : "")}>
               <select
+                aria-label="Семестр"
                 value={semester}
                 onChange={(e) => setSemester(e.target.value)}
               >
@@ -66,11 +66,14 @@ export default function StudentsPage({ open, onDetails, selectedStudent }) {
                 <option value="2">2 семестр</option>
                 <option value="3">3 семестр</option>
               </select>
-              <img src={asset("0cb45.svg")} alt="" />
-            </label>
-            <label className="select-filter">
-              <span className="sr-only">Группа</span>
-              <select value={group} onChange={(e) => setGroup(e.target.value)}>
+              {semester ? (
+                <button className="clear-filter" aria-label="Сбросить семестр" onClick={() => setSemester("")}>
+                  <img src={asset("31e17.svg")} alt="" />
+                </button>
+              ) : <img src={asset("0cb45.svg")} alt="" />}
+            </div>
+            <div className={"select-filter" + (group ? " selected" : "")}>
+              <select aria-label="Группа" value={group} onChange={(e) => setGroup(e.target.value)}>
                 <option value="">Группа</option>
                 {[...new Set(allStudents.map((s) => s.group))].map((g) => (
                   <option key={g} value={g}>
@@ -78,8 +81,12 @@ export default function StudentsPage({ open, onDetails, selectedStudent }) {
                   </option>
                 ))}
               </select>
-              <img src={asset("0cb45.svg")} alt="" />
-            </label>
+              {group ? (
+                <button className="clear-filter" aria-label="Сбросить группу" onClick={() => setGroup("")}>
+                  <img src={asset("31e17.svg")} alt="" />
+                </button>
+              ) : <img src={asset("0cb45.svg")} alt="" />}
+            </div>
           </div>
         </div>
         <img className="directory-line" src={asset("c2786.svg")} alt="" />

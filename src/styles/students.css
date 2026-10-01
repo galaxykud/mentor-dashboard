@@ -72,7 +72,8 @@ main:has(.students-page) header {
   font-size: 16px;
   line-height: 1;
 }
-.directory-filters .course-filter.selected {
+.directory-filters .course-filter.selected,
+.select-filter.selected {
   background: #121212b3;
   color: #fff;
 }
@@ -99,6 +100,22 @@ main:has(.students-page) header {
 .select-filter img {
   margin-left: auto;
   pointer-events: none;
+}
+.select-filter.selected select {
+  color: #fff;
+}
+.select-filter.selected option {
+  color: #121212;
+  background: #fff;
+}
+.clear-filter {
+  position: relative;
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  flex: none;
+  display: grid;
+  place-items: center;
 }
 .directory-line {
   display: block;
