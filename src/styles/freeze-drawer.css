@@ -276,6 +276,7 @@
   white-space: nowrap;
 }
 .freeze-summary {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   width: 460px;
   min-height: 191px;
   padding: 20px;
@@ -335,6 +336,7 @@
   white-space: pre-wrap;
 }
 .freeze-done {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   position: absolute;
   left: 32px;
   right: 36px;
