@@ -25,6 +25,8 @@
   .student-list .student,
   .directory-list .student {
     user-select: none;
+    margin-inline: -20px;
+    padding-inline: 20px;
   }
   .student-list .student:hover,
   .directory-list .student:hover {
