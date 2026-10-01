@@ -59,6 +59,8 @@
   color: #121212;
 }
 .calendar-modes button {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  font-weight: 400;
   height: 36px;
   padding: 0 16px;
   font-size: 14px;
