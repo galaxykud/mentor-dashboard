@@ -22,7 +22,7 @@ export default function DashboardPage({ open, goPage }) {
       <section className="day-cards" aria-label="План на сегодня">
         <article className="card plan">
           <div className="plan-image">
-            <img src={asset("94770.png")} alt="" />
+            <img src={asset("94770.png")} alt="" fetchPriority="high" loading="eager" />
           </div>
           <div className="plan-heading">
             <h2>Пятница, 8 сентября</h2>
