@@ -153,6 +153,7 @@ export default function FreezeDrawer({ student, onClose, onCancel }) {
               </label>
               <div className="freeze-comment">
                 <textarea
+                  className="ym-disable-keys"
                   id="freeze-comment"
                   placeholder="Необязательно"
                   maxLength={500}
@@ -235,7 +236,7 @@ export default function FreezeDrawer({ student, onClose, onCancel }) {
                   </span>
                 </div>
                 {comment && (
-                  <div className="freeze-summary-comment">
+                  <div className="freeze-summary-comment ym-hide-content">
                     <small>Комментарий</small>
                     <p>{comment}</p>
                   </div>

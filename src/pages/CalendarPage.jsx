@@ -178,7 +178,7 @@ export default function CalendarPage({ open }) {
                               }
                             >
                               <strong>{e.type}</strong>
-                              <p>{e.comment}</p>
+                              <p className="ym-hide-content">{e.comment}</p>
                               {e.topic && (
                                 <span className="calendar-person">
                                   {e.image && (

@@ -133,7 +133,7 @@ export default function StudentDrawer({ student, onClose, open }) {
               ))}
               {sent.map((msg, i) => (
                 <div className="chat-message out new-message" key={"sent" + i}>
-                  <div className="chat-bubble">
+                  <div className="chat-bubble ym-hide-content">
                     <p>{msg}</p>
                     <span>
                       Сейчас
@@ -160,6 +160,7 @@ export default function StudentDrawer({ student, onClose, open }) {
                 <img src={asset("b741d.svg")} alt="" />
               </button>
               <input
+                className="ym-disable-keys"
                 aria-label="Написать сообщение"
                 placeholder="Написать сообщение..."
                 value={draft}

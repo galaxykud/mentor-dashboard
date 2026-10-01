@@ -85,6 +85,7 @@ export default function TaskDrawer({ initialDate, onCreate, onClose }) {
             Комментарий
             <div className="task-comment">
               <textarea
+                className="ym-disable-keys"
                 value={comment}
                 maxLength={500}
                 onChange={(e) => setComment(e.target.value)}

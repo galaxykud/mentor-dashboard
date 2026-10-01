@@ -7,6 +7,7 @@ import StudentsPage from "./pages/StudentsPage";
 import CalendarPage from "./pages/CalendarPage";
 import { allStudents } from "./data/students";
 import useNavigation from "./hooks/useNavigation";
+import { trackPage } from "./lib/analytics";
 export default function App() {
   const [dialog, setDialog] = useState(null);
   const { page, studentName, navigate, goPage: changePage } = useNavigation();
@@ -23,7 +24,8 @@ export default function App() {
   const closeStudent = () => navigate("/students");
   useEffect(() => {
     document.title = `${{ home: "Главная", students: "Ученики", calendar: "Календарь" }[page]} — кабинет куратора`;
-  }, [page]);
+    trackPage(page, Boolean(studentName));
+  }, [page, studentName]);
   return (
     <>
       <Sidebar
