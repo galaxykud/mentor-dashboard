@@ -71,7 +71,7 @@
 
 .task-top > div {
   display: flex;
-  align-items: flex-end;
+  align-items: baseline;
   gap: 4px;
 }
 
