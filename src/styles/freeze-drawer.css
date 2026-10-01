@@ -94,12 +94,14 @@
   flex: none;
 }
 .period-control {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   top: 310px;
 }
 .reason-control {
   top: 406px;
 }
 .reason-control select {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   appearance: none;
   width: 100%;
   height: 100%;
@@ -162,10 +164,12 @@
   height: 168px;
   border: 1px solid #9b9994;
   border-radius: 32px;
-  background: #ecedea80;
+  background: #fff;
   overflow: hidden;
 }
 .freeze-comment textarea {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  font-weight: 400;
   display: block;
   width: 100%;
   height: 100%;
