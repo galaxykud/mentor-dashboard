@@ -11,7 +11,7 @@ main:has(.students-page) header {
 }
 .directory-toolbar {
   display: grid;
-  grid-template-columns: 305px 464px 1fr;
+  grid-template-columns: minmax(0, 1fr) 464px max-content;
   align-items: start;
   height: 64px;
 }
@@ -157,13 +157,10 @@ main:has(.students-page) header {
 }
 @media (max-width: 1450px) and (min-width: 761px) {
   .directory-toolbar {
-    grid-template-columns: minmax(170px, 1fr) minmax(240px, 464px) auto;
+    grid-template-columns: minmax(170px, 1fr) minmax(240px, 464px) max-content;
   }
   .directory-search {
     width: 100%;
-  }
-  .directory-filters {
-    padding-left: 24px;
   }
   .directory-filters > button,
   .select-filter {
@@ -172,11 +169,10 @@ main:has(.students-page) header {
 }
 @media (max-width: 1100px) and (min-width: 761px) {
   .directory-toolbar {
-    grid-template-columns: minmax(120px, 1fr) minmax(180px, 300px) auto;
+    grid-template-columns: minmax(120px, 1fr) minmax(180px, 300px) max-content;
   }
   .directory-filters {
     gap: 6px;
-    padding-left: 12px;
   }
   .directory-filters > button,
   .select-filter {
@@ -187,6 +183,11 @@ main:has(.students-page) header {
   .select-filter img {
     width: 18px;
     height: 18px;
+  }
+}
+@media (min-width: 761px) {
+  .directory-filters {
+    padding-left: 32px;
   }
 }
 @media (max-width: 760px) {
