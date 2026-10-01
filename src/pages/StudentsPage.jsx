@@ -49,13 +49,28 @@ export default function StudentsPage({ open, onDetails, selectedStudent }) {
             />
           </label>
           <div className="directory-filters">
-            <button
-              className={"course-filter " + (course ? "selected" : "")}
-              onClick={() => setCourse(course ? "" : "Граф. дизайн")}
-            >
-              {course || "Направление"}
-              <img src={asset(course ? "31e17.svg" : "0cb45.svg")} alt="" />
-            </button>
+            {course ? (
+              <button
+                className="course-filter selected"
+                aria-label="Сбросить направление"
+                onClick={() => setCourse("")}
+              >
+                {course}
+                <img src={asset("31e17.svg")} alt="" />
+              </button>
+            ) : (
+              <div className="select-filter">
+                <select
+                  aria-label="Направление"
+                  value={course}
+                  onChange={(e) => setCourse(e.target.value)}
+                >
+                  <option value="" disabled>Направление</option>
+                  <option value="Граф. дизайн">Граф. дизайн</option>
+                </select>
+                <img src={asset("0cb45.svg")} alt="" />
+              </div>
+            )}
             <div className={"select-filter" + (semester ? " selected" : "")}>
               <select
                 aria-label="Семестр"
