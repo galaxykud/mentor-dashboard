@@ -3,7 +3,7 @@ import { trackGoal } from "../../lib/analytics";
 import { asset } from "../../lib/assets";
 import { freezePeriod } from "../../lib/dates";
 import Portrait from "../Portrait";
-export default function FreezeDrawer({ student, onClose, onCancel }) {
+export default function FreezeDrawer({ student, cardOpenedAt, onClose, onCancel }) {
   const startedAt = useRef(performance.now());
   const attempts = useRef(0);
   useEffect(() => {
@@ -35,6 +35,9 @@ export default function FreezeDrawer({ student, onClose, onCancel }) {
       trackGoal("freeze_created", {
         elapsed_seconds: Math.round(
           (performance.now() - startedAt.current) / 1000,
+        ),
+        duration_sec: Math.round(
+          (performance.now() - cardOpenedAt) / 1000,
         ),
         attempts: attempts.current,
       });

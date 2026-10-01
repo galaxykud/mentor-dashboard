@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { trackGoal } from "../../lib/analytics";
 import { asset } from "../../lib/assets";
 import { designMessages } from "../../data/messages";
@@ -7,6 +7,7 @@ import Portrait from "../Portrait";
 import StudentInfo from "./StudentInfo";
 import FreezeDrawer from "../FreezeDrawer/FreezeDrawer";
 export default function StudentDrawer({ student, onClose, open }) {
+  const cardOpenedAt = useRef(performance.now());
   useEffect(() => {
     trackGoal("student_card_open");
   }, []);
@@ -29,6 +30,7 @@ export default function StudentDrawer({ student, onClose, open }) {
     return (
       <FreezeDrawer
         student={student}
+        cardOpenedAt={cardOpenedAt.current}
         onClose={onClose}
         onCancel={() => setFreezing(false)}
       />
