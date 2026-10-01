@@ -1,3 +1,19 @@
+.drawer-close,
+.modal .close {
+  transition: transform 250ms ease;
+  transform-origin: center;
+}
+.drawer-close:hover,
+.modal .close:hover {
+  transform: rotate(90deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .drawer-close,
+  .modal .close {
+    transition: none;
+  }
+}
+
 .directory-list .row-selected,
 .directory-list .row-selected .student-name,
 .directory-list .row-selected .updated {
