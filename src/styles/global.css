@@ -7,13 +7,18 @@ body {
   background: #ecedea;
   color: #121212;
   font-family:
-    -apple-system, BlinkMacSystemFont, "SF Pro Display", Arial, sans-serif;
+    "SF Pro Display", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   font-size: 18px;
 }
 
 button,
 input {
   font: inherit;
+}
+
+select,
+textarea {
+  font-family: inherit;
 }
 
 button {
