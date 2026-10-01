@@ -55,5 +55,3 @@ npm run preview -- --base /mentor-dashboard/
 ```
 
 Открывайте `/mentor-dashboard/#/students` на адресе preview-сервера. Секреты, `.env`, `node_modules`, `dist` и служебная папка `.vercel` исключены из Git.
-
-`vercel.json` содержит прежние настройки сборки, но удалённый проект Vercel сейчас не существует. Метрика пока не подключена.
