@@ -187,6 +187,9 @@
 .freeze-comment textarea::placeholder {
   color: #9b9994;
 }
+.freeze-comment:focus-within {
+  border-color: #595959;
+}
 .freeze-comment span {
   font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   font-weight: 400;
