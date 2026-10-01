@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { trackGoal } from "../../lib/analytics";
 import { asset } from "../../lib/assets";
 import { designMessages } from "../../data/messages";
 import { readLocation } from "../../lib/routes";
@@ -6,11 +7,12 @@ import Portrait from "../Portrait";
 import StudentInfo from "./StudentInfo";
 import FreezeDrawer from "../FreezeDrawer/FreezeDrawer";
 export default function StudentDrawer({ student, onClose, open }) {
+  useEffect(() => {
+    trackGoal("student_card_open");
+  }, []);
   const [freezing, setFreezing] = useState(false);
   const [tab, setTab] = useState(() =>
-    readLocation().searchParams.get("tab") === "info"
-      ? "info"
-      : "dialog",
+    readLocation().searchParams.get("tab") === "info" ? "info" : "dialog",
   );
   const [draft, setDraft] = useState("");
   const [sent, setSent] = useState([]);
@@ -94,7 +96,10 @@ export default function StudentDrawer({ student, onClose, open }) {
           </button>
           <button
             className={tab === "info" ? "selected" : ""}
-            onClick={() => setTab("info")}
+            onClick={() => {
+              if (tab !== "info") trackGoal("student_info_open");
+              setTab("info");
+            }}
           >
             Информация
           </button>

@@ -1,11 +1,19 @@
 const COUNTER_ID = 113253171;
 let previousUrl;
 
+export function trackGoal(name, params = {}) {
+  if (import.meta.env.PROD && typeof window.ym === "function") {
+    window.ym(COUNTER_ID, "reachGoal", name, params);
+  }
+}
+
 export function initializeAnalytics() {
   if (!import.meta.env.PROD) return;
-  window.ym = window.ym || function (...args) {
-    (window.ym.a = window.ym.a || []).push(args);
-  };
+  window.ym =
+    window.ym ||
+    function (...args) {
+      (window.ym.a = window.ym.a || []).push(args);
+    };
   window.ym.l = Date.now();
   const script = document.createElement("script");
   script.async = true;

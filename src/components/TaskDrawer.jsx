@@ -1,6 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { trackGoal } from "../lib/analytics";
 import { asset } from "../lib/assets";
 export default function TaskDrawer({ initialDate, onCreate, onClose }) {
+  const startedAt = useRef(performance.now());
+  useEffect(() => {
+    trackGoal("task_form_open");
+  }, []);
   const [type, setType] = useState("Лекция"),
     [topic, setTopic] = useState("Прототипирование"),
     [date, setDate] = useState(initialDate),
@@ -10,6 +15,11 @@ export default function TaskDrawer({ initialDate, onCreate, onClose }) {
   const submit = (event) => {
     event.preventDefault();
     onCreate({ type, topic, date, time, comment });
+    trackGoal("task_created", {
+      elapsed_seconds: Math.round(
+        (performance.now() - startedAt.current) / 1000,
+      ),
+    });
   };
   return (
     <div

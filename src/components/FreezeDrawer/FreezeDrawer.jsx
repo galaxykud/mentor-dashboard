@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { trackGoal } from "../../lib/analytics";
 import { asset } from "../../lib/assets";
 import { freezePeriod } from "../../lib/dates";
 import Portrait from "../Portrait";
 export default function FreezeDrawer({ student, onClose, onCancel }) {
+  const startedAt = useRef(performance.now());
+  const attempts = useRef(0);
+  useEffect(() => {
+    trackGoal("freeze_form_open");
+  }, []);
   const [step, setStep] = useState("form");
   const [start, setStart] = useState("2026-09-08");
   const [end, setEnd] = useState("2026-09-14");
@@ -22,9 +28,16 @@ export default function FreezeDrawer({ student, onClose, onCancel }) {
     : "";
   const submit = (e) => {
     e.preventDefault();
+    attempts.current += 1;
     if (start && end && end >= start && reason) {
       setDatesOpen(false);
       setStep("success");
+      trackGoal("freeze_created", {
+        elapsed_seconds: Math.round(
+          (performance.now() - startedAt.current) / 1000,
+        ),
+        attempts: attempts.current,
+      });
     }
   };
   return (

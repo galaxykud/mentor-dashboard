@@ -1,5 +1,6 @@
 import PageHeader from "../components/PageHeader";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { trackGoal } from "../lib/analytics";
 import { asset } from "../lib/assets";
 import StudentRow from "../components/StudentRow";
 import { allStudents } from "../data/students";
@@ -9,6 +10,19 @@ export default function StudentsPage({ open, onDetails, selectedStudent }) {
   const [course, setCourse] = useState("Граф. дизайн");
   const [semester, setSemester] = useState("");
   const [group, setGroup] = useState("");
+  const searchRecorded = useRef(false);
+  useEffect(() => {
+    if (!query.trim() || searchRecorded.current) return;
+    const timer = setTimeout(() => {
+      trackGoal("student_search_used");
+      searchRecorded.current = true;
+    }, 700);
+    return () => clearTimeout(timer);
+  }, [query]);
+  const changeFilter = (setter, value, filter) => {
+    setter(value);
+    if (value) trackGoal("student_filter_used", { filter });
+  };
   let shown = allStudents.filter(
     (s) =>
       (!query ||
@@ -63,9 +77,13 @@ export default function StudentsPage({ open, onDetails, selectedStudent }) {
                 <select
                   aria-label="Направление"
                   value={course}
-                  onChange={(e) => setCourse(e.target.value)}
+                  onChange={(e) =>
+                    changeFilter(setCourse, e.target.value, "direction")
+                  }
                 >
-                  <option value="" disabled>Направление</option>
+                  <option value="" disabled>
+                    Направление
+                  </option>
                   <option value="Граф. дизайн">Граф. дизайн</option>
                 </select>
                 <img src={asset("0cb45.svg")} alt="" />
@@ -75,20 +93,34 @@ export default function StudentsPage({ open, onDetails, selectedStudent }) {
               <select
                 aria-label="Семестр"
                 value={semester}
-                onChange={(e) => setSemester(e.target.value)}
+                onChange={(e) =>
+                  changeFilter(setSemester, e.target.value, "semester")
+                }
               >
                 <option value="">Семестр</option>
                 <option value="2">2 семестр</option>
                 <option value="3">3 семестр</option>
               </select>
               {semester ? (
-                <button className="clear-filter" aria-label="Сбросить семестр" onClick={() => setSemester("")}>
+                <button
+                  className="clear-filter"
+                  aria-label="Сбросить семестр"
+                  onClick={() => setSemester("")}
+                >
                   <img src={asset("31e17.svg")} alt="" />
                 </button>
-              ) : <img src={asset("0cb45.svg")} alt="" />}
+              ) : (
+                <img src={asset("0cb45.svg")} alt="" />
+              )}
             </div>
             <div className={"select-filter" + (group ? " selected" : "")}>
-              <select aria-label="Группа" value={group} onChange={(e) => setGroup(e.target.value)}>
+              <select
+                aria-label="Группа"
+                value={group}
+                onChange={(e) =>
+                  changeFilter(setGroup, e.target.value, "group")
+                }
+              >
                 <option value="">Группа</option>
                 {[...new Set(allStudents.map((s) => s.group))].map((g) => (
                   <option key={g} value={g}>
@@ -97,10 +129,16 @@ export default function StudentsPage({ open, onDetails, selectedStudent }) {
                 ))}
               </select>
               {group ? (
-                <button className="clear-filter" aria-label="Сбросить группу" onClick={() => setGroup("")}>
+                <button
+                  className="clear-filter"
+                  aria-label="Сбросить группу"
+                  onClick={() => setGroup("")}
+                >
                   <img src={asset("31e17.svg")} alt="" />
                 </button>
-              ) : <img src={asset("0cb45.svg")} alt="" />}
+              ) : (
+                <img src={asset("0cb45.svg")} alt="" />
+              )}
             </div>
           </div>
         </div>
@@ -108,19 +146,19 @@ export default function StudentsPage({ open, onDetails, selectedStudent }) {
         <div className="directory-tabs">
           <button
             className={tab === "all" ? "selected" : ""}
-            onClick={() => setTab("all")}
+            onClick={() => changeFilter(setTab, "all", "status")}
           >
             Все 74
           </button>
           <button
             className={tab === "attention" ? "selected" : ""}
-            onClick={() => setTab("attention")}
+            onClick={() => changeFilter(setTab, "attention", "status")}
           >
             Требуют внимания
           </button>
           <button
             className={tab === "frozen" ? "selected" : ""}
-            onClick={() => setTab("frozen")}
+            onClick={() => changeFilter(setTab, "frozen", "status")}
           >
             Заморозка
           </button>
