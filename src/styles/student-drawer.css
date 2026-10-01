@@ -1,0 +1,256 @@
+.row-selected {
+  background: #b8b6b1;
+}
+.sidebar.sidebar-above {
+  z-index: 12;
+}
+.student-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: rgba(18, 18, 18, 0.2);
+  backdrop-filter: blur(2px);
+}
+.student-drawer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 528px;
+  height: 100%;
+  background: #fff;
+  border-radius: 32px 0 0 32px;
+  overflow: hidden;
+}
+.drawer-close {
+  position: absolute;
+  right: 36px;
+  top: 24px;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+}
+.drawer-close img {
+  width: 24px;
+  height: 24px;
+}
+.drawer-profile {
+  position: absolute;
+  left: 32px;
+  top: 64px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.drawer-profile-text {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.drawer-profile-text h2 {
+  font-size: 20px;
+  line-height: 0.8;
+  white-space: nowrap;
+}
+.drawer-profile-text p {
+  font-size: 14px;
+  line-height: 1;
+  color: #9b9994;
+}
+.drawer-profile-text p + p {
+  color: #121212b3;
+}
+.drawer-profile-text strong {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #c62828;
+  font-size: 14px;
+  line-height: 1.2;
+}
+.drawer-profile-text strong img {
+  width: 16px;
+  height: 16px;
+}
+.drawer-actions {
+  position: absolute;
+  left: 32px;
+  right: 36px;
+  top: 184px;
+  display: flex;
+  gap: 12px;
+}
+.drawer-actions button {
+  height: 48px;
+  width: 224px;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+}
+.drawer-actions button:first-child {
+  background: #ff7900;
+}
+.drawer-actions button:last-child {
+  background: #121212;
+}
+.drawer-actions img {
+  width: 20px;
+  height: 20px;
+}
+.drawer-tabs {
+  position: absolute;
+  left: 32px;
+  top: 268px;
+  width: 460px;
+  height: 28px;
+  display: flex;
+  border-bottom: 1.5px solid #ddd;
+}
+.drawer-tabs button {
+  width: 121px;
+  height: 28px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1;
+  color: #9b9994;
+}
+.drawer-tabs button.selected {
+  border-bottom: 4px solid #121212;
+  color: #121212;
+  font-weight: 500;
+}
+.chat-content {
+  position: absolute;
+  left: 32px;
+  right: 36px;
+  top: 320px;
+  bottom: 90px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.chat-date {
+  text-align: center;
+  color: #9b9994;
+  font-size: 14px;
+  line-height: 20px;
+  height: 20px;
+  margin-bottom: 16px;
+}
+.chat-message {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+.chat-message.out {
+  justify-content: flex-end;
+}
+.chat-message.in {
+  justify-content: flex-start;
+}
+.chat-bubble {
+  position: relative;
+  width: 341px;
+  height: 100%;
+  border-radius: 16px;
+  padding: 12px;
+  background: #ecedea;
+  font-size: 14px;
+  line-height: 20px;
+  color: #121212;
+}
+.chat-message.in .chat-bubble {
+  background: #fff1d6;
+}
+.chat-bubble > p {
+  max-width: 100%;
+  line-height: 20px;
+}
+.chat-bubble > span {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  line-height: 1;
+  color: #12121280;
+}
+.chat-bubble > span img {
+  width: 16px;
+  height: 16px;
+}
+.chat-message.new-message {
+  height: auto;
+  min-height: 64px;
+}
+.chat-message.new-message .chat-bubble {
+  min-height: 64px;
+}
+.chat-empty {
+  padding: 32px;
+  text-align: center;
+  color: #9b9994;
+  font-size: 14px;
+}
+.chat-compose {
+  position: absolute;
+  bottom: 24px;
+  left: 32px;
+  right: 36px;
+  height: 48px;
+  border-radius: 32px;
+  background: #ecedea;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.chat-compose button {
+  width: 24px;
+  height: 24px;
+  flex: none;
+}
+.chat-compose button img {
+  width: 24px;
+  height: 24px;
+}
+.chat-compose input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: none;
+  outline: 0;
+  font-size: 14px;
+  color: #121212;
+}
+.chat-compose input::placeholder {
+  color: #121212b3;
+}
+.drawer-info {
+  position: absolute;
+  top: 320px;
+  left: 32px;
+  right: 36px;
+  font-size: 16px;
+}
+.drawer-info p {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ecedea;
+  padding: 16px 0;
+}
+.drawer-info strong {
+  font-weight: 500;
+}
+.modal-backdrop {
+  z-index: 20;
+}

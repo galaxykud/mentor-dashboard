@@ -1,0 +1,72 @@
+.directory-list .row-selected,
+.directory-list .row-selected .student-name,
+.directory-list .row-selected .updated {
+  color: #fff;
+}
+.students-top > button {
+  color: #242424;
+}
+.students-top > button:hover {
+  color: #ff7900;
+}
+.students-top > button:active {
+  color: #b55602;
+}
+.all-students-arrow {
+  display: block;
+  width: 24px;
+  height: 24px;
+  flex: none;
+  margin: -4px;
+  background: currentColor;
+  mask: url("/assets/d2985.svg") center/24px 24px no-repeat;
+}
+@media (min-width: 761px) {
+  .student-list .student,
+  .directory-list .student {
+    user-select: none;
+  }
+  .student-list .student:hover,
+  .directory-list .student:hover {
+    background: #f2f3f0;
+  }
+  .student-list .student:active,
+  .directory-list .student:active {
+    background: #9b9994;
+    color: #121212;
+  }
+  .student-list .student:active .student-name,
+  .directory-list .student:active .student-name,
+  .student-list .student:active .updated,
+  .directory-list .student:active .updated {
+    color: #121212;
+  }
+  .student-list .student:active .messages img,
+  .student-list .student:active .details img,
+  .directory-list .student:active .messages img,
+  .directory-list .student:active .details img {
+    filter: brightness(0);
+  }
+  .directory-list .student.row-selected {
+    background: #b8b6b1;
+    color: #fff;
+  }
+  .directory-list .row-selected .messages img,
+  .directory-list .row-selected .details img {
+    filter: brightness(0) invert(1);
+  }
+}
+.nav-button:hover:not(.active) {
+  background: #b8b6b1;
+}
+.nav-button:hover:not(.active) img,
+.nav-button:active img {
+  filter: brightness(0) invert(1);
+}
+.nav-button:active,
+.nav-button.active:active {
+  background: #121212;
+}
+.nav-button.active .icon-calendar {
+  filter: brightness(0) invert(1);
+}

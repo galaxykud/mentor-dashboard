@@ -1,0 +1,92 @@
+.sidebar {
+  position: fixed;
+  left: 36px;
+  top: 24px;
+  bottom: 24px;
+  width: 80px;
+  min-height: 480px;
+  background: white;
+  border-radius: 32px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+}
+
+.profile-ring {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+}
+
+.portrait {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.portrait img {
+  position: absolute;
+  max-width: none;
+  object-fit: cover;
+}
+
+.nav-line {
+  margin: 16px 0;
+  width: 48px;
+  height: 1px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-button {
+  height: 48px;
+  width: 48px;
+  border-radius: 32px;
+  display: grid;
+  place-items: center;
+}
+
+.nav-button.active {
+  background: #ff7900;
+}
+
+.nav-button:hover:not(.active) {
+  background: #f2f3f0;
+}
+
+.brand {
+  margin-top: auto;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.brand img:first-child {
+  width: 23.609px;
+  height: 17.999px;
+}
+
+.brand img:last-child {
+  width: 6.181px;
+  height: 4.554px;
+  align-self: center;
+  margin-top: 13px;
+}

@@ -1,0 +1,350 @@
+.freeze-panel {
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.freeze-panel::-webkit-scrollbar {
+  display: none;
+}
+.freeze-profile {
+  position: absolute;
+  left: 32px;
+  top: 64px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.freeze-profile > div {
+  display: flex;
+  flex-direction: column;
+}
+.freeze-profile h2 {
+  font-size: 20px;
+  line-height: 16px;
+  margin-bottom: 8px;
+}
+.freeze-profile p {
+  font-size: 14px;
+  line-height: 14px;
+  color: #9b9994;
+}
+.freeze-profile p + p {
+  color: #121212b3;
+  margin-top: 16px;
+}
+.freeze-header-line {
+  position: absolute;
+  left: 32px;
+  top: 156px;
+  width: 460px;
+  height: 1.5px;
+}
+.freeze-intro {
+  position: absolute;
+  left: 32px;
+  top: 188px;
+  width: 460px;
+}
+.freeze-intro h2 {
+  font-size: 20px;
+  line-height: 16px;
+  font-weight: 500;
+}
+.freeze-intro p {
+  font-size: 16px;
+  line-height: 19.2px;
+  color: #9b9994;
+  margin-top: 16px;
+}
+.freeze-label {
+  position: absolute;
+  left: 32px;
+  color: #121212b3;
+  font-size: 16px;
+  line-height: 16px;
+}
+.period-label {
+  top: 282px;
+}
+.reason-label {
+  top: 378px;
+}
+.comment-label {
+  top: 474px;
+}
+.freeze-control {
+  position: absolute;
+  left: 32px;
+  width: 460px;
+  height: 48px;
+  border: 1px solid #121212;
+  border-radius: 32px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+  background: #fff;
+}
+.freeze-control img {
+  width: 24px;
+  height: 24px;
+  flex: none;
+}
+.period-control {
+  top: 310px;
+}
+.reason-control {
+  top: 406px;
+}
+.reason-control select {
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: none;
+  color: #121212;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.reason-control img {
+  transform: rotate(90deg);
+  pointer-events: none;
+}
+.freeze-date-popover {
+  position: absolute;
+  z-index: 3;
+  left: 32px;
+  top: 364px;
+  width: 460px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #dededb;
+  border-radius: 20px;
+  box-shadow: 0 10px 35px #12121224;
+  display: flex;
+  gap: 12px;
+  align-items: end;
+}
+.freeze-date-popover label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: #9b9994;
+  min-width: 0;
+  flex: 1;
+}
+.freeze-date-popover input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #d6d7d3;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 14px;
+}
+.freeze-date-popover button {
+  background: #ff7900;
+  border-radius: 12px;
+  color: #fff;
+  padding: 9px 12px;
+  font-size: 14px;
+}
+.freeze-comment {
+  position: absolute;
+  left: 32px;
+  top: 502px;
+  width: 460px;
+  height: 168px;
+  border: 1px solid #9b9994;
+  border-radius: 32px;
+  background: #ecedea80;
+  overflow: hidden;
+}
+.freeze-comment textarea {
+  display: block;
+  width: 100%;
+  height: 100%;
+  resize: none;
+  padding: 16px 16px 35px;
+  border: 0;
+  outline: 0;
+  background: none;
+  font-size: 16px;
+  line-height: 20px;
+  color: #121212;
+}
+.freeze-comment textarea::placeholder {
+  color: #9b9994;
+}
+.freeze-comment span {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  font-size: 14px;
+  line-height: 14px;
+  color: #9b9994;
+}
+.freeze-footer {
+  position: absolute;
+  left: 32px;
+  right: 36px;
+  bottom: 24px;
+  display: flex;
+  gap: 12px;
+}
+.freeze-footer button {
+  width: 224px;
+  height: 48px;
+  border-radius: 32px;
+  font-size: 16px;
+  line-height: 16px;
+}
+.freeze-footer button:first-child {
+  background: #ff7900;
+  color: #fff;
+}
+.freeze-footer button:last-child {
+  background: #ecedea;
+}
+.freeze-footer button:first-child:hover,
+.freeze-done:hover {
+  background: #e96e00;
+}
+.freeze-footer button:first-child:active,
+.drawer-actions button:first-child:active {
+  background: #b55602;
+}
+.freeze-footer button:last-child:hover {
+  background: #dedfdb;
+}
+.drawer-actions button:first-child:hover {
+  background: #e96e00;
+}
+.drawer-actions button:last-child:hover {
+  background: #242424;
+}
+.freeze-success-main {
+  position: absolute;
+  left: 32px;
+  top: calc(50% - 331px);
+  width: 460px;
+  height: 524px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.freeze-success-heading {
+  height: 297px;
+  width: 356px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+.freeze-success-icon {
+  width: 216.2px;
+  height: 216.2px;
+  margin: -2px 0 -10px;
+}
+.freeze-success-heading h2 {
+  font-size: 24px;
+  line-height: 20px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.freeze-success-heading p {
+  font-size: 16px;
+  line-height: 19.2px;
+  color: #9b9994;
+  white-space: nowrap;
+}
+.freeze-summary {
+  width: 460px;
+  min-height: 191px;
+  padding: 20px;
+  background: #ecedea80;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.freeze-summary-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 33px;
+  color: #242424;
+}
+.freeze-summary-row.student {
+  display: flex;
+  height: 33px;
+  gap: 12px;
+}
+.freeze-summary-row > img {
+  width: 24px;
+  height: 24px;
+  flex: none;
+}
+.freeze-summary-row > span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.freeze-summary-row small,
+.freeze-summary-comment small {
+  font-size: 14px;
+  line-height: 16.8px;
+  font-weight: 400;
+  color: #121212b3;
+}
+.freeze-summary-row strong {
+  font-size: 16px;
+  line-height: 19.2px;
+  font-weight: 500;
+}
+.freeze-summary-line {
+  width: 420px;
+  height: 1px;
+  flex: none;
+}
+.freeze-summary-comment {
+  border-top: 1px solid #d4d5d1;
+  padding-top: 8px;
+  font-size: 16px;
+  line-height: 20px;
+}
+.freeze-summary-comment p {
+  margin-top: 4px;
+  white-space: pre-wrap;
+}
+.freeze-done {
+  position: absolute;
+  left: 32px;
+  right: 36px;
+  bottom: 24px;
+  height: 48px;
+  background: #ff7900;
+  border-radius: 32px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 16px;
+}
+@media (max-height: 780px) and (min-width: 761px) {
+  .freeze-panel {
+    min-height: 750px;
+  }
+  .freeze-footer,
+  .freeze-done {
+    bottom: 24px;
+  }
+  .freeze-success-main {
+    top: 120px;
+  }
+}

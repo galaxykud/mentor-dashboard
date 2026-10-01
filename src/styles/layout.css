@@ -1,0 +1,26 @@
+main {
+  margin: 24px 36px 24px 152px;
+  max-width: 1600px;
+}
+
+header {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.round-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+}

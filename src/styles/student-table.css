@@ -1,0 +1,92 @@
+.table-grid {
+  display: grid;
+  grid-template-columns: 241fr 128fr 140fr 268fr 199fr 158fr 98fr 52fr;
+  align-items: center;
+}
+
+.table-head {
+  height: 46px;
+  color: #9b9994;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.student {
+  height: 68px;
+  color: #242424;
+}
+
+.student-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.status {
+  display: inline-block;
+  padding: 9px 12px;
+  border-radius: 36px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.risk {
+  background: #ffe3e3;
+  color: #c62828;
+}
+
+.meeting {
+  background: #fff1d6;
+  color: #b45f06;
+}
+
+.frozen {
+  background: #e8f0ff;
+  color: #356ac3;
+}
+
+.updated {
+  font-size: 16px;
+  color: #121212b3;
+}
+
+.messages {
+  position: relative;
+  justify-self: center;
+  width: 32px;
+  height: 32px;
+}
+
+.icon-message {
+  width: 32px;
+  height: 32px;
+}
+
+.messages > span {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #ff7900;
+  color: white;
+  font-size: 12px;
+}
+
+.details {
+  justify-self: center;
+}
+
+.search {
+  width: 100%;
+  border: 1px solid #ecedea;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 16px 0;
+}
